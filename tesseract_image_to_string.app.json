@@ -1,0 +1,131 @@
+{
+    "info": {
+        "name": "tesseract_image_to_string",
+        "version": "1.0.0",
+        "category": "tesseract",
+        "keywords": [
+            "tesseract"
+        ],
+        "homepage": "https://answer.bogonets.com/",
+        "bugs": "https://answer.bogonets.com/",
+        "license": "Bogonet License",
+        "author": "cherish00331",
+        "dependencies": [
+            {
+                "type": "pip",
+                "src": "numpy"
+            },
+            {
+                "type": "pip",
+                "src": "opencv-python"
+            },
+            {
+                "type": "pip",
+                "src": "pytesserect"
+            },
+            {
+                "type": "apt",
+                "src": "tesserect-ocr"
+            },
+            {
+                "type": "apt",
+                "src": "libtesserect-dev"
+            }
+        ],
+        "engines": ">=1.0.2",
+        "environment": {},
+        "titles": {
+            "en": "tesseract.image_to_string",
+            "ko": "tesseract.image_to_string"
+        },
+        "descriptions": {
+            "en": "Recognize strings in a image",
+            "ko": "이미지에서 글자를 인식한다."
+        },
+        "documentation_mime": "text",
+        "documentations": {},
+        "meta": {}
+    },
+    "controls": {
+        "input": {
+            "name": "image",
+            "mimes": ["image/jpeg", "image/png"]
+        },
+        "output": {
+            "name": "string",
+            "mime": "text/plain"
+        }
+    },
+    "props": [
+        {
+            "rule": "read_and_write",
+            "name": "lang",
+            "default_value": "eng-legacy",
+            "type": "str",
+            "required": false,
+            "valid": {
+                "list": "eng-legacy;kor;eng;osd"
+            },
+            "title": {
+                "en": "Recognized languages for OCR",
+                "ko": "OCR 인식 언어"
+            },
+            "help": {
+                "en": "List available languages for extracting text.",
+                "ko": "텍스트 추출 언어"
+            }
+        },
+        {
+            "rule": "read_and_write",
+            "name": "psm",
+            "default_value": "Fully automatic page segmentation, but no OSD. (Default)",
+            "type": "str",
+            "required": false,
+            "valid": {
+                "list": "Orientation and script detection (OSD) only.;Automatic page segmentation with OSD.;Automatic page segmentation, but no OSD, or OCR.;Fully automatic page segmentation, but no OSD. (Default);Assume a single column of text of variable sizes.;Assume a single uniform block of vertically aligned text.;Assume a single uniform block of text.;Treat the image as a single text line.;Treat the image as a single word.;Treat the image as a single word in a circle.;Treat the image as a single character.;Sparse text. Find as much text as possible in no particular order.;Sparse text with OSD.;Raw line. Treat the image as a single text line,\nbypassing hacks that are Tesseract-specific.;"
+            },
+            "title": {
+                "en": "page segmentation mode",
+                "ko": "페이지 분할 모드"
+            },
+            "help": {
+                "en": "Specify page segmentation mode.",
+                "ko": "페이지 분할 모드를 지정한다."
+            }
+        },
+        {
+            "rule": "read_and_write",
+            "name": "oem",
+            "default_value": "Default, based on what is available.",
+            "type": "str",
+            "required": false,
+            "valid": {
+                "list": "Legacy engine only.;Neural nets LSTM engine only.;Legacy + LSTM engines.;Default, based on what is available.;"
+            },
+            "title": {
+                "en": "OCR Engine mode",
+                "ko": "OCR 엔진 모드"
+            },
+            "help": {
+                "en": "Specify OCR Engine mode.",
+                "ko": "OCR 엔진 모드 지정한다."
+            }
+        },
+        {
+            "rule": "read_and_write",
+            "name": "config",
+            "default_value": "",
+            "type": "str",
+            "required": false,
+            "valid": {},
+            "title": {
+                "en": "extra option",
+                "ko": "추가 옵션"
+            },
+            "help": {
+                "en": "extra option",
+                "ko": "추가 옵션"
+            }
+        }
+    ]
+}
