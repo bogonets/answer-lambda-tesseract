@@ -33,7 +33,10 @@
             }
         ],
         "engines": ">=1.0.2",
-        "environment": {},
+        "environment": {
+            "type": "pyenv",
+            "name": "tesseract"
+        },
         "titles": {
             "en": "tesseract.image_to_string",
             "ko": "tesseract.image_to_string"
