@@ -48,12 +48,16 @@
     },
     "controls": {
         "input": {
-            "name": "image",
-            "mimes": ["image/jpeg", "image/png"]
+            "list": [{
+                "name": "image",
+                "mimes": ["image/jpeg", "image/png"]
+            }]
         },
         "output": {
-            "name": "string",
-            "mime": "text/plain"
+            "list": [{
+                "name": "string",
+                "mime": "text/plain"
+            }]
         }
     },
     "props": [
