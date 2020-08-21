@@ -121,7 +121,7 @@ def on_run(image: np.ndarray):
     # sys.stdout.write(f"[image_to_string] options : lang: {lang}, psm: {psm}, oem: {oem}, config: {config}\n")
     # sys.stdout.write(f"[image_to_string] result_str : {result_str}\n")
     # sys.stdout.flush()
-    
+
     return {
         'string': np.array(w, np.int32),
         'h': np.array(h, np.int32),

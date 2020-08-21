@@ -21,15 +21,15 @@
             },
             {
                 "type": "pip",
-                "src": "pytesserect"
+                "src": "pytesseract"
             },
             {
                 "type": "apt",
-                "src": "tesserect-ocr"
+                "src": "tesseract-ocr"
             },
             {
                 "type": "apt",
-                "src": "libtesserect-dev"
+                "src": "libtesseract-dev"
             }
         ],
         "engines": ">=1.0.2",
