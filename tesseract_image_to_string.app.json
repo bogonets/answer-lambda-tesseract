@@ -67,12 +67,10 @@
         {
             "rule": "read_and_write",
             "name": "lang",
-            "default_value": "eng-legacy",
+            "default_value": "eng",
             "type": "str",
             "required": false,
-            "valid": {
-                "list": "eng-legacy;kor;eng;osd"
-            },
+            "valid": {},
             "title": {
                 "en": "Recognized languages for OCR",
                 "ko": "OCR 인식 언어"

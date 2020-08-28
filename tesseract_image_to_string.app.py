@@ -100,33 +100,28 @@ def on_valid():
 
 
 def on_run(image: np.ndarray):
-    global lang
-    global oem
-    global psm
-    global config
+
+    if not image.shape:
+        return {'string': None}
+
     #sys.stdout.write(f"[findMaxLocRect] array : {array}")
     #sys.stdout.write(f"[findMaxLocRect] template : {template}")
     #sys.stdout.flush()
 
-    assert len(image.shape) == 3
-    assert image.shape[0] >= 1
-    assert image.shape[1] >= 1
-    assert image.shape[2] >= 1
+    #assert len(image.shape) == 3
+    #assert image.shape[0] >= 1
+    #assert image.shape[1] >= 1
+    #assert image.shape[2] >= 1
 
-    h, w = image.shape[:2]
-    img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+    # img_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    result_str = pytesseract.image_to_string(img_rgb, lang= lang, config=f'--psm {psm} --oem {oem} {config}')
+    result_str = pytesseract.image_to_string(image, lang= lang, config=f'--psm {psm} --oem {oem} {config}')
 
     # sys.stdout.write(f"[image_to_string] options : lang: {lang}, psm: {psm}, oem: {oem}, config: {config}\n")
     # sys.stdout.write(f"[image_to_string] result_str : {result_str}\n")
     # sys.stdout.flush()
 
-    return {
-        'string': np.array(w, np.int32),
-        'h': np.array(h, np.int32),
-        'wh': np.array([w, h], np.int32)
-        }
+    return {'string': result_str}
 
 
 def on_destroy():
